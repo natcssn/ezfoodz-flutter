@@ -1,13 +1,16 @@
 from fastapi import APIRouter
 
+
 router = APIRouter()
 
-@router.get("/menu")
-def menu():
+
+@router.get("/menu/{rid}")
+def menu(rid: int):
     return {
-        "items": [
-            {"name": "Veg Burger", "price": 40},
-            {"name": "Chicken Roll", "price": 60},
-            {"name": "Cold Coffee", "price": 30}
-        ]
-    }
+"items": [
+{"id": 1, "name": "Chicken samosa", "price": 25},
+{"id": 2, "name": "Dosa", "price": 25},
+{"id": 3, "name": "Idly", "price": 25},
+{"id": 4, "name": "Milk", "price": 25}
+]
+}

@@ -6,6 +6,7 @@ from otp import router as otp_router
 from users import router as users_router
 from sessions import router as session_router
 from upload import router as upload_router
+from restaurants import router as restaurants_router
 
 app = FastAPI()
 
@@ -16,6 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(restaurants_router)
 app.include_router(register_router)
 app.include_router(login_router)
 app.include_router(otp_router)

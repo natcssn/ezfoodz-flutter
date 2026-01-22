@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'signup_mail.dart';
 import 'menupage.dart';
+import 'restaurants_page.dart';
 import 'package:http/http.dart' as http;
 
 class LoginPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class LoginPage extends StatelessWidget {
       body: {"username": u.text, "password": p.text},
     );
     if (r.statusCode == 200) {
-      Navigator.push(c, MaterialPageRoute(builder: (_) => MenuPage()));
+      Navigator.push(c, MaterialPageRoute(builder: (_) => RestaurantsPage()));
     }
   }
 
